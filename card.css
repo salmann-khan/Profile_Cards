@@ -19,7 +19,7 @@ body{
 }
 section::before{
     content: "";
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -29,7 +29,7 @@ section::before{
 }
 section::after{
     content: "";
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
