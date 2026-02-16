@@ -1,5 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body{
+*{
+    margin: 0;
+    padding: 0;
     font-family: "Poppins", sans-serif;
+}
+img{
+    width: 30%;
+    height: 30%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #020024;
+    min-height: 100vh;
+}
+section::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#097967, #fdbb2d);
+    clip-path: circle(25% at right 60%);
+}
+section::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+.container{
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    flex-wrap: wrap;
+    margin: 40px 0px;
+}
+
+.container .card{
+    position: relative;
+    width: 260px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 15px 35px rgba(0, 0px, 0px, 0.02);
+    margin: 20px;
+    border-radius: 12px;
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+    border-left: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(50px) saturate(180%);
+}
+
+.container .card .content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.4;
+    transition: .5s ease-in;
+}
+
+.container .card .socials{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+}
+
+.container .card .socials li{
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: .3s;
+    transition-delay: calc(0.1s * var(--i));
+}
+.container .card:hover .socials li{
+    transform: translateY(0);
+    opacity: 1;
+}
+.container .card .socials li a{
+    color: white;
+    font-size: 25px;
+}
+.container .card:hover .content{
+    opacity: 1;
+}
+
+.container .card .content .content-details h3{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 20px 0 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.1em;
+}
+
+.container .card .content .content-details h3 span{
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: initial;
+}
+.container .card .content .img{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(255, 255, 255, 0.25);
+}
+
+.container .card .content .img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
